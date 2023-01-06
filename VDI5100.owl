@@ -1,0 +1,805 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.hsu-ifa.de/ontologies/VDI5100#"
+     xml:base="http://www.hsu-ifa.de/ontologies/VDI5100"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:VDI5100="http://www.hsu-ifa.de/ontologies/VDI5100#">
+    <owl:Ontology rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#consistsOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#consistsOf">
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Component"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Component"/>
+        <rdfs:comment>Describes that a component consists of other components.</rdfs:comment>
+        <rdfs:label>consistsOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasActionInformation -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasActionInformation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionInformation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Notification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Direction"/>
+        <rdfs:comment>Describes the direction in which a conveyor is moving or in which it should move.</rdfs:comment>
+        <rdfs:label>hasActionInformation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasData -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasData">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#SensorInformation"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Data"/>
+        <rdfs:comment>Describes data that is transmitted in a SensorInformation element</rdfs:comment>
+        <rdfs:label>hasData</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasFacilityPoint -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasFacilityPoint">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#OperatingParameter"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#SensorInformation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingElement"/>
+        <rdfs:comment>Describes what point in the facility is refered to in a SensorInformation element.</rdfs:comment>
+        <rdfs:label>hasFacilityPoint</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasFacilitySegment -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasFacilitySegment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#FacilityStatus"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingSegment"/>
+        <rdfs:comment>Describes what segment of the facility is refered to in a I:FacilityStatus element.</rdfs:comment>
+        <rdfs:label>hasFacilitySegment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionInformation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionRequest"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionCancellation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionDone"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionRequest"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Notification"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderDone"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:comment>Describes the location of a transport unit when an information element was exchanged. Only applies to Information elements that refer to a transport unit and are bound to a certain location (i.e. Notification, DirectionRequest etc.).</rdfs:comment>
+        <rdfs:label>hasLocation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasParameterSet -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasParameterSet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#OperatingParameter"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#ParameterSet"/>
+        <rdfs:label>hasParameterSet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasSource">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Mission"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrder"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:comment>Describes the startpoint of a transport order or mission.</rdfs:comment>
+        <rdfs:label>hasSource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasSourceAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasSourceAction">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Mission"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Action"/>
+        <rdfs:comment>Defines action that needs to be performed th the source.</rdfs:comment>
+        <rdfs:label>hasSourceAction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasStatus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#FacilityStatus"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Status"/>
+        <rdfs:comment>Sends information about the status of a facility</rdfs:comment>
+        <rdfs:label>hasStatus</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasTarget -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasTarget">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Mission"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrder"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingElement"/>
+        <rdfs:comment>Describes the target of a transport order or mission.</rdfs:comment>
+        <rdfs:label>hasTarget</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasTargetAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasTargetAction">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Mission"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Action"/>
+        <rdfs:comment>Defines action that needs to be performed at the target.</rdfs:comment>
+        <rdfs:label>hasTargetAction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#performsDirectionControl -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#performsDirectionControl">
+        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#performsFunction"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingGroup"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionControl"/>
+        <rdfs:comment>Describes that a component group performs the function Direction Control</rdfs:comment>
+        <rdfs:label>performsDirectionControl</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#performsFacilityControl -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#performsFacilityControl">
+        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#performsFunction"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingElement"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#FacilityControl"/>
+        <rdfs:comment>Describes that a component element performs the function Facility Control</rdfs:comment>
+        <rdfs:label>performsFacilityControl</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#performsFunction -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#performsFunction">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:comment>Describes that a component performs a function.</rdfs:comment>
+        <rdfs:label>performsFunction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#performsInformationCollection -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#performsInformationCollection">
+        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#performsFunction"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#InformationElement"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#InformationCollection"/>
+        <rdfs:comment>Describes that a component Information Element performs the function Information Collection</rdfs:comment>
+        <rdfs:label>performsInformationCollection</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#performsMissionManagement -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#performsMissionManagement">
+        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#performsFunction"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingSegment"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#MissionManagement"/>
+        <rdfs:comment>Describes that a component segment performs the function Mission Management</rdfs:comment>
+        <rdfs:label>performsMissionManagement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#performsResourceUtilisation -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#performsResourceUtilisation">
+        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#performsFunction"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingArea"/>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#ResourceUtilization"/>
+        <rdfs:comment>Describes that a component area performs the function Resource Utilisation</rdfs:comment>
+        <rdfs:label>performsResourceUtilization</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#receivesInformation -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#receivesInformation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Component"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportCoordination"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Describes, that a Component receives Information through an interface.</rdfs:comment>
+        <rdfs:label>receivesInformation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#refersToTransportUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#refersToTransportUnit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionInformation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionRequest"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Mission"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionCancellation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionDone"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionRequest"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Notification"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#SensorInformation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrder"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderCancellation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderDone"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#TransportUnit"/>
+        <rdfs:comment>TransportUnit that an Information exchange refers to.</rdfs:comment>
+        <rdfs:label>refersToTransportUnit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#sendsInformation -->
+
+    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#sendsInformation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Component"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportCoordination"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Describes, that a Component sends Information through an interface.</rdfs:comment>
+        <rdfs:label>sendsInformation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasTimestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasTimestamp">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionInformation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionRequest"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#FacilityStatus"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Mission"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionCancellation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionDone"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionRequest"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Notification"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#OperatingParameter"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#SensorInformation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrder"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderCancellation"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderDone"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Describes the Timestamp of an Information</rdfs:comment>
+        <rdfs:label>hasTimestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#hasTransportUnitId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#hasTransportUnitId">
+        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#TransportUnit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Describes the ID of a TransportUnit</rdfs:comment>
+        <rdfs:label>hasTransportUnitID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#Action -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Action">
+        <rdfs:comment>Optional control code that can be transmitted in a Mission.</rdfs:comment>
+        <rdfs:label>Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#Component -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Component">
+        <rdfs:label>Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingArea -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingArea">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Component"/>
+        <rdfs:comment>Components:ConveyingArea
+The component ConveyingArea is a combina-tion of conveying segments. The joint function is ResourceUtilisation (F:RU).</rdfs:comment>
+        <rdfs:label>ConveyingArea</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingElement -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingElement">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Component"/>
+        <rdfs:comment>Components: ConveyingElement
+The component ConveyingElement is the smallest unit for controlling the conveying technology by means of sensors and actuators. It performs the function FacilityControl (F:FC).</rdfs:comment>
+        <rdfs:label>ConveyingElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingGroup -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingGroup">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Component"/>
+        <rdfs:comment>Components: ConveyingGroup
+The component ConveyingGroup is a combina-tion of basic components that appears to be a new functional unit when viewed externally, e.g. branching, junction or I-points. The joint function is DirectionControl (F:DC).</rdfs:comment>
+        <rdfs:label>ConveyingGroup</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingSegment -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingSegment">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Component"/>
+        <rdfs:comment>Components:ConveyingSegment
+The component ConveyingSegment is a combi-nation of conveying groups. The joint function is MissionManagement (F:MM).</rdfs:comment>
+        <rdfs:label>ConveyingSegment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#Data -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Data">
+        <rdfs:comment>Measured data that was recorded by a sensor.</rdfs:comment>
+        <rdfs:label>Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#Direction -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Direction">
+        <rdfs:comment>Direction that a conveyor should move to or is currently moving to.</rdfs:comment>
+        <rdfs:label>Direction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#DirectionControl -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionControl">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Function"/>
+        <rdfs:comment>Function: DirectionControl</rdfs:comment>
+        <rdfs:label>DirectionControl</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#DirectionInformation -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionInformation">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: DirectionInformation</rdfs:comment>
+        <rdfs:label>DirectionInformation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#DirectionRequest -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionRequest">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information:DirectionRequest</rdfs:comment>
+        <rdfs:label>DirectionRequest</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#FacilityControl -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#FacilityControl">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Function"/>
+        <rdfs:comment>Function: FacilityControl</rdfs:comment>
+        <rdfs:label>FacilityControl</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#FacilityStatus -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#FacilityStatus">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: Facility Status</rdfs:comment>
+        <rdfs:label>FacilityStatus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#Function -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Function">
+        <rdfs:label>Function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#Information -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Information">
+        <rdfs:comment>Superclass of all the information, that can be exchanged at an interface.</rdfs:comment>
+        <rdfs:label>Information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#InformationCollection -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#InformationCollection">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Function"/>
+        <rdfs:comment>Function: InformationCollection</rdfs:comment>
+        <rdfs:label>InformationCollection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#InformationElement -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#InformationElement">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Component"/>
+        <rdfs:comment>Components: InformationElement
+The component InformationElement is the unit for gathering, storing and relaying identification and sensor data most closely linked to the facili-ty. It performs the function InformationCollec-tion (F:IC).</rdfs:comment>
+        <rdfs:label>InformationElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#Mission -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Mission">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: Mission</rdfs:comment>
+        <rdfs:label>Mission</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#MissionCancellation -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionCancellation">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: MissionCancellation</rdfs:comment>
+        <rdfs:label>MissionCancellation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#MissionDone -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionDone">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: MissionDone</rdfs:comment>
+        <rdfs:label>MissionDone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#MissionManagement -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionManagement">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Function"/>
+        <rdfs:comment>Function: MissionManagement</rdfs:comment>
+        <rdfs:label>MissionManagement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#MissionRequest -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionRequest">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: MissionRequest</rdfs:comment>
+        <rdfs:label>MissionRequest</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#Notification -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Notification">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: Notification</rdfs:comment>
+        <rdfs:label>Notification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#OperatingParameter -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#OperatingParameter">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: OperatingParameter</rdfs:comment>
+        <rdfs:label>OperatingParameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#ParameterSet -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ParameterSet">
+        <rdfs:comment>ParameterSet that can be used for parameterisable facilities. Their characteristics are specific to the facility.</rdfs:comment>
+        <rdfs:label>ParameterSet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#ResourceUtilization -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ResourceUtilization">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Function"/>
+        <rdfs:comment>Function: ResourceUtilisation</rdfs:comment>
+        <rdfs:label>ResourceUtilization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#SensorInformation -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#SensorInformation">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: SensorInformation</rdfs:comment>
+        <rdfs:label>SensorInformation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#Status -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Status">
+        <rdfs:comment>Status of a Conveyor Segment or Element (e.g. available, not available, busy, etc)</rdfs:comment>
+        <rdfs:label>Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#TransportCoordination -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportCoordination">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Function"/>
+        <rdfs:comment>TransportCoordination</rdfs:comment>
+        <rdfs:label>TransportCoordination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrder -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrder">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: TransportOrder</rdfs:comment>
+        <rdfs:label>TransportOrder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderCancellation -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderCancellation">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: TransportOrderCancellation</rdfs:comment>
+        <rdfs:label>TransportOrderCancellation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderDone -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderDone">
+        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI5100#Information"/>
+        <rdfs:comment>Information: TransportOrderDone</rdfs:comment>
+        <rdfs:label>TransportOrderDone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hsu-ifa.de/ontologies/VDI5100#TransportUnit -->
+
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportUnit">
+        <rdfs:comment>A unit that is transported within the system.</rdfs:comment>
+        <rdfs:label>TransportUnit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingArea"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingElement"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingGroup"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ConveyingSegment"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#InformationElement"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionControl"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#FacilityControl"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#InformationCollection"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionManagement"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#ResourceUtilization"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportCoordination"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionInformation"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#DirectionRequest"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#FacilityStatus"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Mission"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionCancellation"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionDone"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#MissionRequest"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#Notification"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#OperatingParameter"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#SensorInformation"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrder"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderCancellation"/>
+            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI5100#TransportOrderDone"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
